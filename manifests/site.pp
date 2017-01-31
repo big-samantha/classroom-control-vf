@@ -1,3 +1,4 @@
+
 ## site.pp ##
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
@@ -44,3 +45,5 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
+notify { 'Hello from Muhammad Ali': }
