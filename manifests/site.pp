@@ -52,9 +52,5 @@ node default {
  # content => "thi is kash",
 
 
-class user {
-  user { 'fundamentals':
-    ensure => present,
-  }
-}
+
 }
