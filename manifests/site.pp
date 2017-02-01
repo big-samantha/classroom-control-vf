@@ -51,7 +51,7 @@ node default {
  # mode    => '0644',
  # content => "thi is kash",
  
-include users::fundamentals
+include users
 
 
 
