@@ -64,5 +64,5 @@ node default {
     creates => '/etc/motd',
   }
   #lab 9.2
-  includes users
+  include users
 }
