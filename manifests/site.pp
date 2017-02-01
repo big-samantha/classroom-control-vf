@@ -46,10 +46,11 @@ node default {
   
   file { '/etc/motd':
     ensure => file,
-    content => 'PUPPET RULLLLLLEEEEES',
+    content => 'My changes worked. I hope!!',
     owner => 'root',
     group => 'root',
     mode => '0644',
   }
   
 } 
+
