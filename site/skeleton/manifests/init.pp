@@ -1,1 +1,5 @@
-include skeleton
+class skeleton {
+
+
+
+}
