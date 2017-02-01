@@ -52,5 +52,5 @@ notify { 'Hello from Muhammad Ali': }
 
 
 exec { 'set motd':
-command => "/bin/cowsay 'Welcome to ${::fqdn}!'>/etc/motd",
+command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!'>/etc/motd",
 }
