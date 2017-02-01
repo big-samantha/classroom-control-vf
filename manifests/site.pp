@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   #lab 9.2 
-  include examples::users
+  include users
   
   #lab 7.1
   file { '/etc/motd':
