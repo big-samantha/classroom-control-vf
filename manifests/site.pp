@@ -43,4 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  file { 'motd':
+            name    => '/etc/motd',
+            content => 'hello world!'
+      }
 }
