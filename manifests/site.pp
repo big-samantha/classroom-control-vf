@@ -43,14 +43,6 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  
-  file { '/etc/motd':
-    ensure => file,
-    content => 'PUPPET RULLLLLLEEEEES',
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-  }
 
   $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
