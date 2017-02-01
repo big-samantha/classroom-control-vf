@@ -53,7 +53,4 @@ file { '/etc/motd':
   content => "My changes in github. Work?!\n",
 }
 
-package { 'cowsay':
-  ensure   => present,
-  provider => gem,
 } 
