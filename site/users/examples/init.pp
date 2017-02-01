@@ -1,1 +1,1 @@
-include class users
+include users
