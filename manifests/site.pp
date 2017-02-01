@@ -46,9 +46,9 @@ node default {
   
   file { '/etc/motd':
   ensure => present,
-  content => 'Dave Was here'
-  owner => 'root'
-  group => 'root'
+  content => 'Dave Was here',
+  owner => 'root',
+  group => 'root',
   mode => '0644',
 }
 
