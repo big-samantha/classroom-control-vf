@@ -45,11 +45,11 @@ node default {
   include role::classroom
   
   file { '/etc/motd':
-  ensure => file,
-  content => 'Dave Was here',
+  ensure => file,  
   owner => 'root',
   group => 'root',
   mode => '0644',
+  content => 'Dave Was here',
 }
 
 
