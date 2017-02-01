@@ -42,19 +42,26 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  
   include role::classroom
   #file { '/etc/motd':
   #         ensure => file,
-  #          content => 'welcome your new master, puppet!',
+  #          content => 'welcome your new master, puppet!\n',
   #          owner => 'root',
   #          group => 'root',
   #          mode => '0644',
   #   }
-  $motd_command="/usr/local/bin/cowsay 'Welcome to ${::fdqn}! > /etc/motd"
-  $motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
-  exec { 'set motd':
-    command => $motd_command,
-    unless => $motd_check,
+  #instructor version
+  #$motd_command="/usr/local/bin/cowsay 'Welcome to ${::fdqn}! > /etc/motd"
+  #$motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
+  #exec { 'set motd':
+  #  command => $motd_command,
+  #  unless => $motd_check,
+  #}
+  #solution version
+  exec {"cowsay 'Welcome to ${::fdqn}! > /etc/motd":
+    path => '/usr/bin:/usr/local/bin',
+    creates => '/etc/motd',
   }
 
 }
