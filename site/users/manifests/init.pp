@@ -5,5 +5,3 @@ class users {
   }
 
 }
-
-class { 'users': }
