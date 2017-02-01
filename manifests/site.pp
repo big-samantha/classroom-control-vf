@@ -45,7 +45,7 @@ node default {
   include role::classroom
   file { '/etc/motd':
             ensure => file,
-            content => 'welcome your new master, puppet!',
+            content => 'welcome your new master, puppet!/l/n',
             owner => 'root',
             group => 'root',
             mode => '0644',
