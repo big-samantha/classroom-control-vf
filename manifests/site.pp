@@ -51,8 +51,8 @@ node default {
   mode    => '0644',
   content => "thi i kash",
 }
-exec { 'updatedb':
+exec { 'cowsay 'Welcome to ${::fqdn}!':
   path    => '/etc/motd',
-  creates => "cowsay 'Welcome to ${::fqdn}!'",
+
 }
 }
