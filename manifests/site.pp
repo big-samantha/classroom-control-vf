@@ -50,8 +50,9 @@ node default {
   #          group => 'root',
   #          mode => '0644',
   #   }
-  exec {'/etc/motd':
-    cowsay 'Welcome to ${::fdqn}! > /etcmotd
+  exec {"cowsay 'Welcome to ${::fdqn}! > /etcmotd":
+    path => '/usr/bin:/usr/local/bin',
+    creates => '/etc/motd',
   }
   
   
