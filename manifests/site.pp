@@ -43,18 +43,18 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  #file { '/etc/motd':
-  #          ensure => file,
-  #          content => 'welcome your new master, puppet!/l/n',
-  #          owner => 'root',
-  #          group => 'root',
-  #          mode => '0644',
-  #   }
-  $motd_command="/usr/local/bin/cowsay 'Welcome to ${::fdqn}! > /etc/motd"
-  $motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
-  exec { 'set motd':
-    command => $motd_command,
-    unless => $motd_check,
-  }
+  file { '/etc/motd':
+           ensure => file,
+            content => 'welcome your new master, puppet!/l/n',
+            owner => 'root',
+            group => 'root',
+            mode => '0644',
+     }
+  #$motd_command="/usr/local/bin/cowsay 'Welcome to ${::fdqn}! > /etc/motd"
+  #$motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
+  #exec { 'set motd':
+  #  command => $motd_command,
+  #  unless => $motd_check,
+  #}
 
 }
