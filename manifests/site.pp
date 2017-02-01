@@ -43,6 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  }
   ## Added the below for excercise 7.1
 file { '/etc/motd':
   ensure  => file,
