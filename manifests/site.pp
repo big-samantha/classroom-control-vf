@@ -45,6 +45,8 @@ node default {
   include role::classroom
   #lab 9.2 
   include users
+  #lab 9.3
+  include skeleton
   
   #lab 7.1
   file { '/etc/motd':
