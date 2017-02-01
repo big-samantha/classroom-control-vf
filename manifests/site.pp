@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include users
-  
+  }
     
   #file {'/etc/motd':
   # ensure => file,
@@ -53,4 +53,4 @@ node default {
   # mode => '0644',
   # content => "Good Morning, America!, I love to learn Puppet",
   # }
-} 
+
