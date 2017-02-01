@@ -7,3 +7,4 @@ fi
 l's auto-paging feature:
 # export SYSTEMD_PAGER=
 # User specific aliases and functions
+this is kash money computer
