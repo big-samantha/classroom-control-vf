@@ -55,5 +55,6 @@ node default {
   command => "/usr/local/bin/cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
   }
   include users
+  include skeleton
 }
 
