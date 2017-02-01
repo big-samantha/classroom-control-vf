@@ -4,7 +4,8 @@ package { 'memcached':
   
   file { '/etc/sysconfig/memcached':
     ensuer => file,
-    source => 'puppet://modules/memcached'
+    source => 'puppet://modules/memcached',
+    require => Package['memcached'],
     }
   service { 'memcached':
     ensure => running,
