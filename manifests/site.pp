@@ -52,7 +52,7 @@ node default {
     mode => '0644',
   }
 
-  $motd_command = "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+  $motd_command = "/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
 
 
