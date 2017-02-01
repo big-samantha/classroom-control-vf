@@ -15,6 +15,6 @@ class memcached {
  service { 'memcached':
   ensure => running,
   enable => true,
-  Subscribe => File['/ect/sysconfig/memcached'],
+  subscribe => File['/ect/sysconfig/memcached'],
  }
 } 
