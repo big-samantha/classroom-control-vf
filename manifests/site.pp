@@ -39,10 +39,17 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-  i have done few thing done know what i am doing here
+  #i have done few thing done know what i am doing here
   # Example:
   #   class { 'my_class': }
   include role::classroom
   
+  file { '/etc/motd':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0644',
+  content => "thi i kash",
+}
 
 }
