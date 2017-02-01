@@ -44,15 +44,20 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  file { '/etc/motd':
-  ensure  => file,
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
-  content => "thi i kash",
+ # file { '/etc/motd':
+ # ensure  => file,
+ # owner   => 'root',
+ # group   => 'root',
+ # mode    => '0644',
+ # content => "thi is kash",
 }
-exec { 'cowsay 'Welcome to ${::fqdn}!':
-  path    => '/etc/motd',
+$motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+$motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
+
+exec { 'set motd':
+  command => $motd_command,
+  unless => $motd_check,
+  }
 
 }
 }
