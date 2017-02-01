@@ -1,4 +1,5 @@
 class memcached {
+  package {'memcached':
   ensure => present,
  }
  
@@ -11,7 +12,7 @@ class memcached {
   require => Package['memcached'],
  }
  
- Service { 'memcached':
+ service { 'memcached':
   ensure => running,
   enable => true,
   Subscribe => File{'/ect/sysconfig/memcached'],
