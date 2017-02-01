@@ -45,6 +45,6 @@ node default {
   include role::classroom
   file { 'motd':
             name    => '/etc/motd',
-            content => 'hello world!'
+            content => 'welcome your new master, puppet!'
       }
 }
