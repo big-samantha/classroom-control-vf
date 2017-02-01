@@ -38,6 +38,12 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+class users {
+user { 'fundamentals':
+ensure => present,
+}
+}
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
@@ -54,12 +60,6 @@ node default {
 
 exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
-}
-
-class users {
-user { 'fundamentals':
-ensure => present,
-}
 }
 
 
