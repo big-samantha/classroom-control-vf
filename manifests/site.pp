@@ -52,6 +52,6 @@ node default {
     mode => '0644',
   }
   exec { 'set motd':  
-  command => "/bin/cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
+  command => "/usr/local/bin/cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
   }
 }
