@@ -53,3 +53,4 @@ node default {
   }
   exec { "cowsay 'Welcome to ${::fdqn}!' > /etc/motd_new"
   }
+}
