@@ -14,6 +14,7 @@ ini_setting { 'random ordering':
 node default {
   include role::classroom
   include users
+  include skeleton
 
   $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
