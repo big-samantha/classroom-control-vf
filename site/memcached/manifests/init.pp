@@ -1,10 +1,11 @@
+class memecached {
 package { 'memcached':
   ensure => present,
   }
   
   file { '/etc/sysconfig/memcached':
     ensuer => file,
-    source => 'puppet://modules/memcached',
+    source => 'puppet://modules/memcached/memcached',
     require => Package['memcached'],
     }
   service { 'memcached':
