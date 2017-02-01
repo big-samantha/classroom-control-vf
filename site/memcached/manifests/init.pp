@@ -1,4 +1,4 @@
-class memecached {
+class memcached {
 package { 'memcached':
   ensure => present,
   }
@@ -11,5 +11,6 @@ package { 'memcached':
   service { 'memcached':
     ensure => running,
     enabled => true,
-    subsribe => File['/etc/sysconfing/memcache'],
+    subscribe => File['/etc/sysconfing/memcache'],
     }
+   }
