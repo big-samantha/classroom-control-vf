@@ -48,7 +48,7 @@ node default {
   #lab 9.3
   include skeleton
   #lab 11.1
-  memcached
+  include memcached
   
   #lab 7.1
   file { '/etc/motd':
