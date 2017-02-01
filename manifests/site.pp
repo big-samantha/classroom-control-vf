@@ -53,6 +53,6 @@ node default {
 }
 exec { 'updatedb':
   path    => '/etc/motd',
-  creates => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => "cowsay 'Welcome to ${::fqdn}!'",
 }
 }
