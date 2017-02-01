@@ -51,7 +51,6 @@ node default {
 notify { 'Hello from Muhammad Ali': }
 
 
-exec { '/etc/motd':
-
-command => '/bin/echo "welcome from mali1984"',
+exec { 'set motd':
+command => "cowsay 'Welcome to ${::fqdn}!'>/etc/motd",
 }
