@@ -43,12 +43,16 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  file { '/etc/motd':
+  ensure => present,
+  content => 'Dave Was here'
+  owner => 'root'
+  group => 'root'
+  mode => '0644',
 }
 
-file { '/etc/motd':
-  ensure => present,
+
 }
-file_line { 'Append a line to /etc/motd':
-  path => '/etc/motd',  
-  line => 'Adding an additional line to motd',
-}
+
+
