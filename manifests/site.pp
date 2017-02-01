@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   
   include role::classroom
+  
   #file { '/etc/motd':
   #         ensure => file,
   #          content => 'welcome your new master, puppet!\n',
@@ -51,14 +52,16 @@ node default {
   #          group => 'root',
   #          mode => '0644',
   #   }
-  #instructor version
+  
+  # lab 7.2 instructor version
   #$motd_command="/usr/local/bin/cowsay 'Welcome to ${::fdqn}! > /etc/motd"
   #$motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
   #exec { 'set motd':
   #  command => $motd_command,
   #  unless => $motd_check,
   #}
-  #solution version
+  
+  # lab 7.2 solution version
   exec {"cowsay 'Welcome to ${::fdqn}! > /etc/motd":
     path => '/usr/bin:/usr/local/bin',
     creates => '/etc/motd',
