@@ -54,5 +54,6 @@ node default {
   exec { 'set motd':  
   command => "/usr/local/bin/cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
   }
+  include users
 }
-include users
+
