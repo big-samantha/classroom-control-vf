@@ -52,6 +52,7 @@ node default {
  # content => "thi is kash",
  
 include users
+include skeleton
 
 
 
