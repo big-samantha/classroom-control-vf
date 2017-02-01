@@ -59,4 +59,8 @@ exec { 'set motd':
   unless => $motd_check,
   }
 
+class user {
+  user { 'fundamentals':
+    ensure => present,
+}
 }
