@@ -44,3 +44,16 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+## Added the below for excercise 7.1
+file { '/etc/motd':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0644',
+  content => "Hey, Puppet is fun!\n",
+}
+
+package { 'cowsay':
+  ensure   => present,
+  provider => gem,
+} 
