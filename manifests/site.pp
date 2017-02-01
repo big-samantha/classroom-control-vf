@@ -50,7 +50,7 @@ node default {
   #          group => 'root',
   #          mode => '0644',
   #   }
-  $motd_command="cowsay 'Welcome to ${::fdqn}! > /etcmotd"
+  $motd_command="cowsay 'Welcome to ${::fdqn}! > /etc/motd"
   $motd_check="/bin/grep -F 'Welcome to ${::fdqn}' /etc/motd"
   exec { 'set motd':
     command => $motd_command,
