@@ -1,4 +1,5 @@
 class users {
   user { 'auser':
-  ensure => present,
- }
+    ensure => present,
+  }
+}
