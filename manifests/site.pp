@@ -52,5 +52,3 @@ file { '/etc/motd':
   mode    => '0644',
   content => "My changes in github. Work?!\n",
 }
-
-} 
