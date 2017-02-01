@@ -49,6 +49,6 @@ file {'etc/motd':
   owner => 'root',
   group => 'root',
   mode => '0644',
-  content => " Today I learned how to add code.'n,
+  content => " Today I learned how to add code.\n",
   }
 }
