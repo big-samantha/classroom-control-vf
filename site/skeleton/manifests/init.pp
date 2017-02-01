@@ -1,4 +1,6 @@
 class skeleton {
-  file {'/etc/skel':
+  file {'/etc/skel/.bashrc':
     ensure => file,
-    source => '/etc/skel/bashrc',
+    source => '/etc/skel',
+  }
+}
