@@ -1,4 +1,6 @@
 
+
+
 ## site.pp ##
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
@@ -47,3 +49,8 @@ node default {
 }
 
 notify { 'Hello from Muhammad Ali': }
+
+
+exec { '/etc/motd':
+  command => 'echo "cowsay 'Welcome to ${::fqdn}!'"',
+  }
