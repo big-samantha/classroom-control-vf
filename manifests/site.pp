@@ -47,7 +47,7 @@ node default {
     ensure => file,
     owner => 'root',
     group => 'root',
-    mode => '0640',
+    mode => '0644',
     content => "Good Morning, America!, I love to learn Puppet",
     }
 } 
