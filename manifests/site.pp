@@ -51,13 +51,14 @@ node default {
 #  group => 'root',
 #  mode => '0644',
 #  content => "Puppet is not user friendly.\n",
-exec {"cowsay 'Welcome to ${::fqdn}!'> /etc/motd":
-  path => '/usr/bin:/usr/local/bin',
-  creates => '/etc/motd',
-    }
+#exec {"cowsay 'Welcome to ${::fqdn}!'> /etc/motd":
+#  path => '/usr/bin:/usr/local/bin',
+#  creates => '/etc/motd',
+#    }
     
- host {'testing.puppetlabs.vm':
-  ensure => present,
-  ip => '127.0.0.1',
-}
+# host {'testing.puppetlabs.vm':
+#  ensure => present,
+#  ip => '127.0.0.1',
+#}
+include users
 }
