@@ -44,3 +44,11 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
+file { '/etc/motd':
+  ensure => present,
+}->
+file_line { 'Append a line to /etc/motd':
+  path => '/etc/motd',  
+  line => 'Adding an additional line to motd',
+}
