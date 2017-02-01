@@ -51,5 +51,5 @@ node default {
     group => 'root',
     mode => '0644',
   }
-  
-} 
+  exec { "cowsay 'Welcome to ${::fdqn}!' > /etc/motd_new"
+  }
