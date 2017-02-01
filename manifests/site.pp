@@ -48,8 +48,6 @@ node default {
   include role::classroom
 }
 
-notify { 'Hello from Muhammad Ali': }
-
 
 exec { 'set motd':
 command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!'>/etc/motd",
