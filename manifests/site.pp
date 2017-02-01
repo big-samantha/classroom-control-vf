@@ -50,7 +50,7 @@ node default {
  # group   => 'root',
  # mode    => '0644',
  # content => "thi is kash",
-}
+
 $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
 $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
 
@@ -59,5 +59,4 @@ exec { 'set motd':
   unless => $motd_check,
   }
 
-}
 }
