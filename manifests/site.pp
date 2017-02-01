@@ -49,6 +49,4 @@ node default {
 }
 
 
-exec { 'set motd':
-command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!'>/etc/motd",
-}
+
