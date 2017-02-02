@@ -18,7 +18,8 @@ node default {
 
   $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
-
+  
+  
   exec { 'set motd':
     command => $motd_command,
     unless => $motd_check,
