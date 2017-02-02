@@ -79,7 +79,7 @@ node default {
    }
    
    $ostype = $::osfamily
-   if $ostype = 'Redhat' { 
+   if $ostype == 'Redhat' { 
     notify {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": 
    }
 }
