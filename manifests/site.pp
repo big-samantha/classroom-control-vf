@@ -59,11 +59,9 @@ include nginx
 
 
 
-case $::osfamily {
-'Linux-vm': {
-$version = pick($::operatingsystem, $::operatingsystemmajrelease)
-if versioncmp($version, '2016.0') < 0 {
-fail("This Training VM is out of date. Please update: ${download_url}")
+if $is_virtual {
+    notify { 'machinetype':
+      message => "This is a VM of type: ${::virtual}",
 }
 
 
