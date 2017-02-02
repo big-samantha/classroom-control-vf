@@ -3,14 +3,11 @@ class nginx {
     ensure => present,
   }
   
-  #$root_dir = "/var/www"
-  #file { '$root_dir':
   file { '/var/www':
     ensure  => 'directory',
     group   => '0',
     mode    => '0755',
-    owner   => '0',
-    type   => 'directory',
+    owner   => '0',    
   }
 
   file { '/var/www/index.html':
