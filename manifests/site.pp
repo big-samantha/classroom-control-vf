@@ -73,7 +73,7 @@ node default {
   include skeleton
   
   # lab 13.2
-  if $::virtual != 'physical' {
+  if $is_virtual {
     $vmname = capitalize($::virtual)
     notify {"${vmname} is a virtual machine.":}
   }
