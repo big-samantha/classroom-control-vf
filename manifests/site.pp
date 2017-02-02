@@ -32,3 +32,8 @@ node default {
   
   
 }
+
+
+node /.*/ {
+  include "role::${::role}"
+}
