@@ -59,11 +59,10 @@ include nginx
 
 
 
-osfamily
 case $::osfamily {
 'Linux-vm': {
 $version = pick($::operatingsystem, $::operatingsystemmajrelease)
-if versioncmp($version, '2016.1.0') < 0 {
+if versioncmp($version, '2016.0') < 0 {
 fail("This Training VM is out of date. Please update: ${download_url}")
 }
 
