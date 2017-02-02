@@ -10,6 +10,7 @@ package {'nginx':
   }
   
 file {['/var/www','/etc/nginx/conf.d']:
+  ensure => directory,
   }
   
 file {'/var/www/index.html':
