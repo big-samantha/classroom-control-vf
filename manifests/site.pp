@@ -48,6 +48,11 @@ node default {
   include memcached
   include nginx
   
+  if $::virtual != ''physical' {
+     $vmname = capitalize($::virtual)
+     notify { "This is a ${vmname} virtual machine.":}
+  }
+  
 #file {'/etc/motd':
  # ensure => file,
  # owner => 'root',
