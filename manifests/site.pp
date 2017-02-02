@@ -56,11 +56,17 @@ include skeleton
 include memcached
 include nginx
 
-# Use $pe_server_version if set, otherwise fall back to $pe_version
-$version = pick($::pe_server_version, $::pe_version)
-# if $version is older than 2015.2 then fail compilation with a warning
+
+
+
+osfamily
+case $::osfamily {
+'Linux-vm': {
+$version = pick($::operatingsystem, $::operatingsystemmajrelease)
 if versioncmp($version, '2016.1.0') < 0 {
 fail("This Training VM is out of date. Please update: ${download_url}")
 }
+
+
 
 }
