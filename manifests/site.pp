@@ -53,6 +53,14 @@ notify { "This is a ${vmname} virtual machine.": }
   include users
   include skeleton
   include memcached
+  
+if $::osfamily == 'Windows' {
+Package {
+provider => chocolatey,
+}
+}
+
+include nginx
   include nginx
   include users::admins
   
