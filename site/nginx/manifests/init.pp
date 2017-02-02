@@ -3,9 +3,9 @@ class nginx {
     ensure => present,
   }
   
-  $root_dir = "/var/www"
-  
-  file { '$root_dir':
+  #$root_dir = "/var/www"
+  #file { '$root_dir':
+  file { '/var/www':
     ensure  => 'directory',
     group   => '0',
     mode    => '0755',
@@ -13,7 +13,7 @@ class nginx {
     type   => 'directory',
   }
 
-  file { '$root_dir/index.html':
+  file { '/var/www/index.html':
     ensure  => 'file',
     #content => '{md5}e72df373beca2ab0c75ddf7a09ef8093',
     #ctime   => '2017-01-31 15:50:28 +0000',
