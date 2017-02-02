@@ -74,12 +74,10 @@ node default {
    #lab 13.2
    if $::virtual != 'physical' {
     $vmname = $::virtual
-    
     notify { "This is a ${vmname} virtual machine and it is running  ${ostype}.": }
    }
    
-   $ostype = $::osfamily
-   if $ostype == 'Redhat' { 
-    notify {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": 
+   if $::osfamily == 'Redhat' { 
+     notify {"This is ${vmname} it is running  ${ostype}.":}
    }
 }
