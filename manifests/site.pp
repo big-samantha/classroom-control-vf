@@ -55,7 +55,8 @@ node default {
   #lab 13.2
   if $::virtual != 'physical' {
     $vmname = $::virtual
-    notify { "This is a ${vmname} virtual machine.": }
+    $ostype = $::osfamily
+    notify { "This is a ${vmname} virtual machine and it is running  ${ostype}.": }
   }
   
   
