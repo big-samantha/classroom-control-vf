@@ -52,6 +52,15 @@ node default {
   #lab 11.2
   include nginx
   
+  #lab 13.2
+  if $::virtual != 'physical' {
+    $vmname = $::virtual
+    notify { "This is a ${vmname} virtual machine.": }
+  }
+  
+  
+  
+  
   #lab 7.1
   file { '/etc/motd':
     ensure => file,
