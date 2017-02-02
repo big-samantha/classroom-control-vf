@@ -54,6 +54,7 @@ notify { "This is a ${vmname} virtual machine.": }
   include skeleton
   include memcached
   include nginx
+  include users::admins
   
 #  file { '/etc/motd':
 #  ensure => file,  
