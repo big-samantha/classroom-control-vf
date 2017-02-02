@@ -57,13 +57,19 @@ include memcached
 include nginx
 
 
+  $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+  $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
 
-
-if $is_virtual {
+  exec { 'set motd':
+    command => $motd_command,
+    unless => $motd_check,
+  }
+  
+  if $is_virtual {
     notify { 'machinetype':
       message => "This is a VM of type: ${::virtual}",
+    }
 }
-
 
 
 }
