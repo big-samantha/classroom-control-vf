@@ -58,7 +58,9 @@ node default {
     $ostype = $::osfamily
     notify { "This is a ${vmname} virtual machine and it is running  ${ostype}.": }
   }
-  exec {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": }
+  
+  exec {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": 
+  }
   
   
   
