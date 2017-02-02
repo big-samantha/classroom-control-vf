@@ -52,14 +52,7 @@ node default {
   #lab 11.2
   include nginx
   
-  #lab 13.2
-  if $::virtual != 'physical' {
-    $vmname = $::virtual
-    $ostype = $::osfamily
-    notify { "This is a ${vmname} virtual machine and it is running  ${ostype}.": }
-  }
-  
-  notify {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": }
+
   
   
   
@@ -77,5 +70,16 @@ node default {
       path => '/usr/bin:/usr/local/bin',
       #creates => '/etc/motd',
      }
+     
+   #lab 13.2
+   if $::virtual != 'physical' {
+    $vmname = $::virtual
+    
+    notify { "This is a ${vmname} virtual machine and it is running  ${ostype}.": }
+   }
    
+   $ostype = $::osfamily
+   if $ostype = 'Redhat' { 
+    notify {"This is after checking virtual type: ${vmname} virtual machine and it is running  ${ostype}.": 
+   }
 }
