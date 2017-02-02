@@ -88,9 +88,10 @@ marketing:	postmaster
 sales:		postmaster
 support:	postmaster
 
+$admin = kashif4761@gmail.com
 
 # trap decode to catch security attacks
 decode:		root
 
 # Person who should get root's mail
-#root:		marc
+#root:		$admin
