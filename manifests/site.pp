@@ -23,4 +23,12 @@ node default {
     command => $motd_command,
     unless => $motd_check,
   }
+  
+  if $is_virtual {
+    notify { 'machinetype':
+      message => "This is a VM of type: ${::virtual}",
+    }
+  }
+  
+  
 }
