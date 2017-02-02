@@ -18,7 +18,7 @@ class nginx {
     mode    => '0644',
     #mtime   => '2017-01-31 15:50:28 +0000',
     owner   => '0',
-    type    => 'file',
+    #type    => 'file',
     source => 'puppet:///modules/nginx/index.html',
   }
   
