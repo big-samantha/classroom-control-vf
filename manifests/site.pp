@@ -19,6 +19,9 @@ node default {
   $motd_command = "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   $motd_check = "/bin/grep -F 'Welcome to ${::fqdn}' /etc/motd"
   
+  if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": }
   
   exec { 'set motd':
     command => $motd_command,
